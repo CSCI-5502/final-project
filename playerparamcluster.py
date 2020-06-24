@@ -18,20 +18,36 @@ def histogram(data,savefile):
     plt.savefig(savefile+'png')
     plt.close()
 
+def countNaNs(df):
+    dictionary = {}
+    columns = df.head()
+    for col in columns:
+        data = df[col]
+        count = data.isna().sum()
+        dictionary[col] = count
+    return dictionary
+
+def savedatainfile(dictionary,filename):
+    with open(filename, 'w') as f:
+     print(dictionary,file=f)
+
+
 if __name__ == "__main__":
-    filename1 = 'files/datahub/player_overviews.csv'
-    filename2 = 'files/'
+    filename = 'files/datahub/player_overviews.csv'
     #['height_cm','handedness','backhand']
-    df = loaddata(filename1)
+    df = loaddata(filename)
     length = df.shape[0]
     print(length)
 
+    dict_players = countNaNs(df)
+    savedatainfile(dict_players,'player_data.txt')
+
 
     #sample = subsampledata(df,['height_cm','handedness','backhand'])
-    sample1 = subsampledata(df,'handedness')
-    sample2 = subsampledata(df,'backhand')
-    print(type(df),type(sample1))
-    histogram(sample1,'handedness')
-    histogram(sample2,'backhand')
+    # sample1 = subsampledata(df,'handedness')
+    # sample2 = subsampledata(df,'backhand')
+    # print(type(df),type(sample1))
+    # histogram(sample1,'handedness')
+    # histogram(sample2,'backhand')
     #print(df)
 
