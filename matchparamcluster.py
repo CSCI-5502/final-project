@@ -5,7 +5,7 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt 
 
 def loaddata(filename):
-    print(filename)
+    #print(filename)
     df = pd.read_csv(filename)
     return df
 
@@ -15,7 +15,8 @@ def subsampledata(df,col):
     return df
 
 def mergedataframes(dflist):
-    result = pd.concat(dflist)
+    result = pd.concat(dflist,axis=0, join='outer', ignore_index=False, keys=None,
+          levels=None, names=None, verify_integrity=False, copy=True)
     return result
 
 
@@ -38,11 +39,18 @@ if __name__ == "__main__":
     files.remove('atp_rankings_10s.csv')
     files.remove('atp_rankings_00s.csv')
     #print(files)
-    dflist = [loaddata(os.path.join(dirname,f)) for f in files if os.path.isfile(os.path.join(dirname,f))]
-    print(len(dflist))
-    df = mergedataframes(dflist)
-    print(dflist[0].shape,df.shape)
-    df.to_csv('test.csv')
+    files_singles = [f for f in files if (f.find('double')==-1 and f.find('future')!=-1)]
+    files_doubles = [f for f in files if (f.find('double')!=-1 and f.find('future')==-1)]
+    print(files_doubles)
+    print('test: ',len(files),len(files_doubles),len(files_singles))
+    dflist_singles = [loaddata(os.path.join(dirname,f)) for f in files_singles if os.path.isfile(os.path.join(dirname,f))]
+    dflist_doubles = [loaddata(os.path.join(dirname,f)) for f in files_doubles if os.path.isfile(os.path.join(dirname,f))]
+
+    #print(len(dflist_singles))
+    df_singles = mergedataframes(dflist_singles)
+    df_doubles = mergedataframes(dflist_doubles)
+    print(dflist_doubles[-1].shape,df_doubles.shape)
+    df_singles.to_csv('test.csv')
     # df = loaddata(files[0])
     # length = df.shape[0]
     # print(length)
