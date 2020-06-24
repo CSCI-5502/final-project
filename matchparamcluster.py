@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 def loaddata(filename):
     #print(filename)
-    df = pd.read_csv(filename)
+    df = pd.read_csv(filename,header=0)
     return df
 
 def subsampledata(df,col):
@@ -15,8 +15,10 @@ def subsampledata(df,col):
     return df
 
 def mergedataframes(dflist):
-    result = pd.concat(dflist,axis=0, join='outer', ignore_index=False, keys=None,
-          levels=None, names=None, verify_integrity=False, copy=True)
+    first = dflist[0]
+    others = dflist[1:-1]
+    result = first.append(others, ignore_index=True, sort=False) #,axis=0, join='outer', ignore_index=False, keys=None,
+          #levels=None, names=None, verify_integrity=False, copy=True)
     return result
 
 
@@ -24,6 +26,9 @@ def histogram(data,savefile):
     plt.hist(data)
     plt.savefig(savefile+'.png')
     plt.close()
+
+def countrowswithNaN(df):
+    return sum([True for idx,row in df.iterrows() if any(row.isnull())])
 
 if __name__ == "__main__":
     dirname = 'files/jeffsackmanndata'
@@ -49,12 +54,14 @@ if __name__ == "__main__":
     #print(len(dflist_singles))
     df_singles = mergedataframes(dflist_singles)
     df_doubles = mergedataframes(dflist_doubles)
-    print(dflist_doubles[-1].shape,df_doubles.shape)
-    df_singles.to_csv('test.csv')
+    print(dflist_doubles[0],df_doubles)
+    count = countrowswithNaN(df_doubles)
+    print('NaN rows count: ',count)
+    df_doubles.to_csv('test.csv')
     # df = loaddata(files[0])
     # length = df.shape[0]
     # print(length)
-
+    [print(f.shape) for f in dflist_doubles]
 
     # sample = subsampledata(df,['height_cm','handedness','backhand'])
     # sample1 = subsampledata(df,'handedness')
@@ -64,3 +71,6 @@ if __name__ == "__main__":
     # histogram(sample2,'backhand')
     #print(df)
 
+
+
+#https://stackoverflow.com/questions/28199524/best-way-to-count-the-number-of-rows-with-missing-values-in-a-pandas-dataframe
