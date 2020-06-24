@@ -1,5 +1,6 @@
 import pandas as pd 
 import numpy as np 
+import os
 from sklearn.manifold import TSNE 
 import matplotlib.pyplot as plt 
 
@@ -7,21 +8,30 @@ def loaddata(filename):
     df = pd.read_csv(filename)
     return df
 
-def subsampledata(df):
-    df = df[['height_cm','handedness','backhand']]
+def subsampledata(df,col):
+    df = df[col]
     df.dropna(inplace = True)
     return df
 
-def histogram(data):
+def histogram(data,savefile):
     plt.hist(data)
-    plt.show()
+    plt.savefig(savefile+'png')
+    plt.close()
 
 if __name__ == "__main__":
-    filename = 'files/datahub/player_overviews.csv'
-    
-    df = loaddata(filename)
-    df = subsampledata(df)
-    histogram(df['handedness'])
-    histogram(df['backhand'])
-    print(df)
+    filename1 = 'files/datahub/player_overviews.csv'
+    filename2 = 'files/'
+    #['height_cm','handedness','backhand']
+    df = loaddata(filename1)
+    length = df.shape[0]
+    print(length)
+
+
+    #sample = subsampledata(df,['height_cm','handedness','backhand'])
+    sample1 = subsampledata(df,'handedness')
+    sample2 = subsampledata(df,'backhand')
+    print(type(df),type(sample1))
+    histogram(sample1,'handedness')
+    histogram(sample2,'backhand')
+    #print(df)
 
