@@ -4,6 +4,7 @@ import os
 from sklearn.manifold import TSNE 
 import matplotlib.pyplot as plt 
 import pickle
+import json
 def loaddata(filename):
     #print(filename)
     df = pd.read_csv(filename,header=0)
@@ -37,8 +38,14 @@ def countNaNs(df):
     return dictionary
 
 def savedatainfile(dictionary,filename):
-    with open(filename, 'w') as f:
-     print(dictionary,file=f)
+    for key in dictionary.keys():
+        dictionary[key] = (int)(dictionary[key])
+
+    with open(filename, 'w') as fp:
+        json.dump(dictionary, fp,indent=4)
+
+    #with open(filename, 'w') as f:
+    # print(dictionary,file=f)
 
 if __name__ == "__main__":
     dirname = 'files/jeffsackmanndata'
@@ -70,8 +77,8 @@ if __name__ == "__main__":
     dict_doubles = countNaNs(df_doubles)
     print('NaN double count: ', dict_doubles)
 
-    savedatainfile(dict_singles,'singles_sparsity.txt')
-    savedatainfile(dict_doubles,'doubles_sparsity.txt')
+    savedatainfile(dict_singles,'singles_sparsity.json')
+    savedatainfile(dict_doubles,'doubles_sparsity.json')
 
 
 
