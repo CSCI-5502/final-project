@@ -38,13 +38,16 @@ def savedatainfile(dictionary,filename):
 
 if __name__ == "__main__":
     filename = 'files/datahub/player_overviews.csv'
+    filename = 'augmented_player_overview.csv'
     #['height_cm','handedness','backhand']
     df = loaddata(filename)
     length = df.shape[0]
     print(length)
 
     dict_players = countNaNs(df)
-    savedatainfile(dict_players,'player_data.json')
+    #savedatainfile(dict_players,'player_data.json')
+    savedatainfile(dict_players,'player_data_augment.json')
+
 
 
     #sample = subsampledata(df,['height_cm','handedness','backhand'])
