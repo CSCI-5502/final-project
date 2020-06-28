@@ -3,6 +3,7 @@ import numpy as np
 import os
 from sklearn.manifold import TSNE 
 import matplotlib.pyplot as plt 
+import json
 
 def loaddata(filename):
     df = pd.read_csv(filename)
@@ -28,8 +29,11 @@ def countNaNs(df):
     return dictionary
 
 def savedatainfile(dictionary,filename):
-    with open(filename, 'w') as f:
-     print(dictionary,file=f)
+    for key in dictionary.keys():
+        dictionary[key] = (int)(dictionary[key])
+
+    with open(filename, 'w') as fp:
+        json.dump(dictionary, fp,indent=4)
 
 
 if __name__ == "__main__":
@@ -40,7 +44,7 @@ if __name__ == "__main__":
     print(length)
 
     dict_players = countNaNs(df)
-    savedatainfile(dict_players,'player_data.txt')
+    savedatainfile(dict_players,'player_data.json')
 
 
     #sample = subsampledata(df,['height_cm','handedness','backhand'])

@@ -1,1 +1,0 @@
-{'player_id': 0, 'player_slug': 0, 'first_name': 0, 'last_name': 0, 'player_url': 0, 'flag_code': 2185, 'residence': 8898, 'birthplace': 7874, 'birthdate': 5798, 'birth_year': 5798, 'birth_month': 5798, 'birth_day': 5798, 'turned_pro': 9379, 'weight_lbs': 8206, 'weight_kg': 8206, 'height_ft': 8254, 'height_inches': 8254, 'height_cm': 8254, 'handedness': 9776, 'backhand': 9776}
