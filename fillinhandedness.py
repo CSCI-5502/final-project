@@ -62,7 +62,7 @@ def transform_name(first,last):
     name = first+'-'+last
     return name
 
-def fetchdatahubdata(df,name):
+def fetchdatahubplayer(df,name):
     row = df.loc[df['player_slug'] == name]
     #print(name, '\nRow: ', row)
     return row
@@ -71,13 +71,14 @@ def fetchdatahubdata(df,name):
 def augmenthandednessdata(addto,addedfrom):
     #addedfrom = addedfrom[[2,3,4]]
 
-
+    total = addedfrom.shape[0]
     for idx,row in addedfrom.iterrows(): 
         #print(row)
-        print("name: ",row[1] , ':', row[2])
+        
+        #print("name: ",row[1] , ':', row[2])
         name = transform_name(row[1],row[2])
         #print('name: ',name)
-        query = fetchdatahubdata(addto,name)
+        query = fetchdatahubplayer(addto,name)
         #print('name:', name ,'test: ',query.index)
         if(len(query.index) > 0 ):
             addidx = query.index[0]
@@ -91,7 +92,36 @@ def augmenthandednessdata(addto,addedfrom):
             if(entry == 'U'):
                 datum = 'Ambidextrous'
             addto['handedness'][addidx] = datum
+        if(idx% 100 == 0):
+            print('step: ',idx , ":",total)
 
+        
+
+    return addto
+
+def transform_name2(name):
+    name = str(name)
+    name = name.lower()
+    name = name.replace(' ','-')
+    return name
+
+def augmentheightdata(addto,addedfrom):
+    total = addedfrom.shape[0]
+    print(total)
+    for idx,row in addedfrom.iterrows(): 
+        #print(row)
+        #print("name: ",row[10])
+        name = transform_name2(row[10])
+        #print('name: ',name)
+        query = fetchdatahubplayer(addto,name)
+        #print('name:', name ,'test: ',query.index)
+        if(len(query.index) > 0 ):
+            addidx = query.index[0]
+            entry = row[12]
+            #print('query: ',query,'entry:',entry)
+            addto['height_cm'][addidx] = entry
+        if(idx% 100 == 0):
+            print('step: ',idx , ":",total)
     return addto
 
 if __name__ == "__main__":
@@ -99,9 +129,11 @@ if __name__ == "__main__":
     filename2 = 'files/jeffsackmanndata/atp_players.csv'
     df1 = loaddata(filename1)
     df2 = loaddata(filename2) 
+    df3 = loadjacksackmann()
     #print(df1.head())
     #print(df2.head())    
     result = augmenthandednessdata(df1,df2)
+    result = augmentheightdata(result,df3)
     print(result.head())
     #length = df1.shape[0]
     #print(length)
