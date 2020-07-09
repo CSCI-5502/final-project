@@ -1,4 +1,4 @@
 *.csv
 *.png
 *.vscode
-.ipynb_checkpoint
+.ipynb_checkpoints
