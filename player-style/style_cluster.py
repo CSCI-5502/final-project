@@ -43,13 +43,16 @@ def read_charting_data(directory):
     filenames = []
     for filepath in Path(directory).glob('**/*'):
         afile = filepath.absolute()
-        print(afile)
+        #print(afile)
         extension = afile.suffix
         #print(extension)
         if(extension ==".csv"):
-            df = pd.read_csv(afile, error_bad_lines=False, engine='python') #, quoting=csv.QUOTE_NONE, encoding='utf-8')
+            print(afile)
+            df = pd.read_csv(afile, engine='python',index_col=False) #,error_bad_lines=False) #, quoting=csv.QUOTE_NONE, encoding='utf-8')
             dflist.append(df)
             filenames.append(os.path.basename(afile))
+            #if(filenames[-1] == "charting-m-stats-ReturnOutcomes.csv"): #"charting-m-stats-ReturnOutcomes.csv"):
+                #print(df)
 
     return dflist,filenames
 
