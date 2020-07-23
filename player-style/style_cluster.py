@@ -16,11 +16,15 @@ def tsne_cluster():
 def data_preprocess(df):
     names1  = df["match_id"].astype(str)
     names2  = df["match_id"].astype(str)
+    nameidx = df['player'].astype(str)
     name1 = [name.split('-')[-1] for name in names1]
     name2 = [name.split('-')[-2] for name in names2]
     df['name1'] = name1
     df['name2'] = name2
+    newnameidx = [name1[idx] if player else name2[idx] for (idx,player) in enumerate(nameidx)]
+    df['player'] = newnameidx
     print(df.head())
+    return df 
 
 def checksparseness(df):
     sparse = dict()
