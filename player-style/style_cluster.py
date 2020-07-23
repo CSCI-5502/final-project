@@ -13,8 +13,14 @@ from sklearn.manifold import TSNE
 def tsne_cluster():
     pass
 
-def data_preprocess():
-    pass
+def data_preprocess(df):
+    names1  = df["match_id"].astype(str)
+    names2  = df["match_id"].astype(str)
+    name1 = [name.split('-')[-1] for name in names1]
+    name2 = [name.split('-')[-2] for name in names2]
+    df['name1'] = name1
+    df['name2'] = name2
+    print(df.head())
 
 def checksparseness(df):
     sparse = dict()
@@ -65,6 +71,8 @@ def main():
 
     result = cyclesparsenessfiles(dflist,filenames)
     print(result)
+
+    data_preprocess(dflist[4])
     #df = pd.read_csv()
     with open('ChartingProjectSparsity.json', 'w') as outfile:
         json.dump(result,outfile,indent=4)
