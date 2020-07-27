@@ -15,7 +15,8 @@
         "second_aces": 0,
         "second_unret": 0,
         "second_forced": 0,
-        "second_won_lte_3_shots": 0
+        "second_won_lte_3_shots": 0,
+        "idx": 0
     },
     "charting-w-stats-ServeBasics.csv": {
         "totalrows": 8082,
@@ -29,7 +30,8 @@
         "pts_won_lte_3_shots": 0,
         "wide": 0,
         "body": 0,
-        "t": 0
+        "t": 0,
+        "idx": 1
     },
     "charting-w-stats-ReturnDepth.csv": {
         "totalrows": 48016,
@@ -44,7 +46,8 @@
         "err_net": 0,
         "err_deep": 0,
         "err_wide": 0,
-        "err_wide_deep": 0
+        "err_wide_deep": 0,
+        "idx": 2
     },
     "charting-w-stats-ServeInfluence.csv": {
         "totalrows": 5388,
@@ -60,7 +63,8 @@
         "won_7+": 0,
         "won_8+": 0,
         "won_9+": 0,
-        "won_10+": 0
+        "won_10+": 0,
+        "idx": 3
     },
     "charting-w-stats-ShotDirection.csv": {
         "totalrows": 10608,
@@ -71,7 +75,8 @@
         "down_middle": 0,
         "down_the_line": 0,
         "inside_out": 0,
-        "inside_in": 0
+        "inside_in": 0,
+        "idx": 4
     },
     "charting-m-stats-ReturnOutcomes.csv": {
         "totalrows": 105900,
@@ -85,7 +90,8 @@
         "in_play": 0,
         "in_play_won": 0,
         "winners": 0,
-        "total_shots": 0
+        "total_shots": 0,
+        "idx": 5
     },
     "charting-m-stats-ServeDirection.csv": {
         "totalrows": 15300,
@@ -102,7 +108,8 @@
         "err_deep": 0,
         "err_wide_deep": 0,
         "err_foot": 0,
-        "err_unknown": 0
+        "err_unknown": 0,
+        "idx": 6
     },
     "charting-w-stats-ServeDirection.csv": {
         "totalrows": 8082,
@@ -119,7 +126,8 @@
         "err_deep": 0,
         "err_wide_deep": 0,
         "err_foot": 0,
-        "err_unknown": 0
+        "err_unknown": 0,
+        "idx": 7
     },
     "charting-m-stats-ShotDir.csv": {
         "totalrows": 5212,
@@ -132,7 +140,8 @@
         "inside_out": 0,
         "inside_in": 0,
         " 9": 1323,
-        " 10": 1323
+        " 10": 1323,
+        "idx": 8
     },
     "charting-m-stats-ShotDirection.csv": {
         "totalrows": 20294,
@@ -143,7 +152,8 @@
         "down_middle": 0,
         "down_the_line": 0,
         "inside_out": 0,
-        "inside_in": 0
+        "inside_in": 0,
+        "idx": 9
     },
     "charting-m-stats-KeyPointsServe.csv": {
         "totalrows": 20400,
@@ -157,7 +167,8 @@
         "rally_winners": 0,
         "rally_forced": 0,
         "unforced": 0,
-        "dfs": 0
+        "dfs": 0,
+        "idx": 10
     },
     "charting-m-stats-KeyPointsReturn.csv": {
         "totalrows": 20400,
@@ -167,7 +178,8 @@
         "pts_won": 0,
         "rally_winners": 0,
         "rally_forced": 0,
-        "unforced": 0
+        "unforced": 0,
+        "idx": 11
     },
     "charting-m-stats-ServeBasics.csv": {
         "totalrows": 15300,
@@ -181,7 +193,8 @@
         "pts_won_lte_3_shots": 0,
         "wide": 0,
         "body": 0,
-        "t": 0
+        "t": 0,
+        "idx": 12
     },
     "charting-m-stats-NetPoints.csv": {
         "totalrows": 19972,
@@ -195,7 +208,8 @@
         "net_unforced": 0,
         "passed_at_net": 0,
         "passing_shot_induced_forced": 0,
-        "total_shots": 0
+        "total_shots": 0,
+        "idx": 13
     },
     "charting-m-matches.csv": {
         "totalrows": 2577,
@@ -214,7 +228,8 @@
         "Umpire": 979,
         "Best of": 0,
         "Final TB?": 7,
-        "Charted by": 0
+        "Charted by": 0,
+        "idx": 14
     },
     "charting-m-stats-ServeInfluence.csv": {
         "totalrows": 10206,
@@ -230,7 +245,8 @@
         "won_7+": 0,
         "won_8+": 0,
         "won_9+": 0,
-        "won_10+": 0
+        "won_10+": 0,
+        "idx": 15
     },
     "charting-w-stats-SvBreakTotal.csv": {
         "totalrows": 29477,
@@ -244,7 +260,8 @@
         "forced_err": 0,
         "pts_won_lte_3_shots": 0,
         "first_in": 0,
-        "dfs": 0
+        "dfs": 0,
+        "idx": 16
     },
     "charting-m-stats-ReturnDepth.csv": {
         "totalrows": 91250,
@@ -259,7 +276,8 @@
         "err_net": 0,
         "err_deep": 0,
         "err_wide": 0,
-        "err_wide_deep": 0
+        "err_wide_deep": 0,
+        "idx": 17
     },
     "charting-w-stats-Overview.csv": {
         "totalrows": 8908,
@@ -282,7 +300,8 @@
         "winners_bh": 0,
         "unforced": 0,
         "unforced_fh": 0,
-        "unforced_bh": 0
+        "unforced_bh": 0,
+        "idx": 18
     },
     "charting-w-points.csv": {
         "totalrows": 191460,
@@ -328,7 +347,8 @@
         "SetW": 0,
         "Set1.1": 0,
         "Set2.1": 0,
-        "rallyCount": 0
+        "rallyCount": 0,
+        "idx": 19
     },
     "charting-m-stats-ShotDirOutcomes.csv": {
         "totalrows": 59350,
@@ -341,7 +361,8 @@
         "induced_forced": 0,
         "unforced": 0,
         "shots_in_pts_won": 0,
-        "shots_in_pts_lost": 0
+        "shots_in_pts_lost": 0,
+        "idx": 20
     },
     "charting-w-stats-SnV.csv": {
         "totalrows": 2301,
@@ -358,7 +379,8 @@
         "net_unforced": 0,
         "passed_at_net": 0,
         "passing_shot_induced_forced": 0,
-        "total_shots": 0
+        "total_shots": 0,
+        "idx": 21
     },
     "charting-m-stats-SnV.csv": {
         "totalrows": 16623,
@@ -375,7 +397,8 @@
         "net_unforced": 0,
         "passed_at_net": 0,
         "passing_shot_induced_forced": 0,
-        "total_shots": 0
+        "total_shots": 0,
+        "idx": 22
     },
     "charting-w-stats-NetPoints.csv": {
         "totalrows": 10208,
@@ -389,7 +412,8 @@
         "net_unforced": 0,
         "passed_at_net": 0,
         "passing_shot_induced_forced": 0,
-        "total_shots": 0
+        "total_shots": 0,
+        "idx": 23
     },
     "charting-w-matches.csv": {
         "totalrows": 1366,
@@ -408,7 +432,8 @@
         "Umpire": 707,
         "Best of": 0,
         "Final TB?": 0,
-        "Charted by": 0
+        "Charted by": 0,
+        "idx": 24
     },
     "charting-w-stats-ReturnOutcomes.csv": {
         "totalrows": 55871,
@@ -422,7 +447,8 @@
         "in_play": 0,
         "in_play_won": 0,
         "winners": 0,
-        "total_shots": 0
+        "total_shots": 0,
+        "idx": 25
     },
     "charting-m-stats-SvBreakSplit.csv": {
         "totalrows": 55692,
@@ -440,7 +466,8 @@
         "second_aces": 0,
         "second_unret": 0,
         "second_forced": 0,
-        "second_won_lte_3_shots": 0
+        "second_won_lte_3_shots": 0,
+        "idx": 26
     },
     "charting-w-stats-KeyPointsServe.csv": {
         "totalrows": 10776,
@@ -454,7 +481,8 @@
         "rally_winners": 0,
         "rally_forced": 0,
         "unforced": 0,
-        "dfs": 0
+        "dfs": 0,
+        "idx": 27
     },
     "charting-w-stats-KeyPointsReturn.csv": {
         "totalrows": 10776,
@@ -464,7 +492,8 @@
         "pts_won": 0,
         "rally_winners": 0,
         "rally_forced": 0,
-        "unforced": 0
+        "unforced": 0,
+        "idx": 28
     },
     "charting-w-stats-ShotTypes.csv": {
         "totalrows": 58716,
@@ -478,7 +507,8 @@
         "unforced": 0,
         "serve_return": 0,
         "shots_in_pts_won": 0,
-        "shots_in_pts_lost": 0
+        "shots_in_pts_lost": 0,
+        "idx": 29
     },
     "charting-m-stats-SvBreakTotal.csv": {
         "totalrows": 55693,
@@ -492,7 +522,8 @@
         "forced_err": 0,
         "pts_won_lte_3_shots": 0,
         "first_in": 0,
-        "dfs": 0
+        "dfs": 0,
+        "idx": 30
     },
     "charting-m-stats-ShotTypes.csv": {
         "totalrows": 118068,
@@ -506,7 +537,8 @@
         "unforced": 0,
         "serve_return": 0,
         "shots_in_pts_won": 0,
-        "shots_in_pts_lost": 0
+        "shots_in_pts_lost": 0,
+        "idx": 31
     },
     "charting-w-stats-ShotDirOutcomes.csv": {
         "totalrows": 29333,
@@ -519,7 +551,8 @@
         "induced_forced": 0,
         "unforced": 0,
         "shots_in_pts_won": 0,
-        "shots_in_pts_lost": 0
+        "shots_in_pts_lost": 0,
+        "idx": 32
     },
     "charting-m-stats-Rally.csv": {
         "totalrows": 32550,
@@ -533,7 +566,8 @@
         "pl2_won": 0,
         "pl2_winners": 0,
         "pl2_forced": 0,
-        "pl2_unforced": 0
+        "pl2_unforced": 0,
+        "idx": 33
     },
     "charting-m-points.csv": {
         "totalrows": 439988,
@@ -579,7 +613,8 @@
         "SetW": 0,
         "Set1.1": 0,
         "Set2.1": 0,
-        "rallyCount": 4
+        "rallyCount": 4,
+        "idx": 34
     },
     "charting-w-stats-Rally.csv": {
         "totalrows": 17308,
@@ -593,7 +628,8 @@
         "pl2_won": 0,
         "pl2_winners": 0,
         "pl2_forced": 0,
-        "pl2_unforced": 0
+        "pl2_unforced": 0,
+        "idx": 35
     },
     "charting-m-stats-Overview.csv": {
         "totalrows": 19298,
@@ -616,6 +652,7 @@
         "winners_bh": 0,
         "unforced": 0,
         "unforced_fh": 0,
-        "unforced_bh": 0
+        "unforced_bh": 0,
+        "idx": 36
     }
 }
