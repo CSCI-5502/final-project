@@ -316,12 +316,16 @@ def main():
     dflist = getnumericdata(dflist)
     dflist = [df.set_index('player') for df in dflist]
     #print(dflist[0])
-    #print(dflist[0].columns)
+    #print(dflist[4].head())
     dflist = [aggregatedata(df) for df in dflist]
+    print(dflist[0].head(20))
 
-    aggdf = result = pd.concat(dflist, axis=1).reindex(dflist[0].index)
+    aggdf  = pd.concat(dflist, axis=1).reindex(dflist[0].index)
+    aggdf = aggdf.fillna(0)
+    aggdf = aggdf.groupby(lambda x:x, axis=1).sum()
+    #aggdf = aggdf.groupby(aggdf.columns.values, axis=1).agg(lambda x: x.values.tolist()).sum().apply(pd.Series).T
 
-    print(aggdf)
+    #print(aggdf)
     aggdf.to_csv('aggdf.csv')
     #df = pd.read_csv()
     #with open('ChartingProjectSparsity.json', 'w') as outfile:
