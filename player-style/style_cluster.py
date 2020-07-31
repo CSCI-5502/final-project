@@ -320,9 +320,23 @@ def main():
     dflist = [aggregatedata(df) for df in dflist]
     print(dflist[0].head(20))
 
-    aggdf  = pd.concat(dflist, axis=1).reindex(dflist[0].index)
-    aggdf = aggdf.fillna(0)
-    aggdf = aggdf.groupby(lambda x:x, axis=1).sum()
+    dflist = np.array(dflist)
+    femaledflist = dflist[[0,1,2,7,9,11,13,14,16,19]]
+    maledflist = dflist[[3,4,5,6,8,10,12,15,17,18,20]]
+
+    maledf = pd.concat(maledflist,axis=1).reindex(maledflist[0].index)
+    maledf = maledf.fillna(0)
+    maledf = maledf.groupby(lambda x:x, axis=1).sum()
+   
+    femaledf = pd.concat(femaledflist,axis=1).reindex(femaledflist[0].index)
+    femaledf = femaledf.fillna(0)
+    femaledf = femaledf.groupby(lambda x:x, axis=1).sum()
+
+    aggdf = pd.concat([maledf,femaledf])
+    
+    #aggdf  = pd.concat(dflist, axis=1).reindex(dflist[0].index)
+    #aggdf = aggdf.fillna(0)
+    #aggdf = aggdf.groupby(lambda x:x, axis=1).sum()
     #aggdf = aggdf.groupby(aggdf.columns.values, axis=1).agg(lambda x: x.values.tolist()).sum().apply(pd.Series).T
 
     #print(aggdf)
