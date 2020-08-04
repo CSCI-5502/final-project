@@ -312,20 +312,29 @@ def main():
         print('index: ',idx)
         dflist[idx]=data_preprocess(dflist[idx])
 
-    #print(dflist[0].head())
     dflist = getnumericdata(dflist)
     dflist = [df.set_index('player') for df in dflist]
-    #print(dflist[0])
-    #print(dflist[0].columns)
+
     dflist = [aggregatedata(df) for df in dflist]
+    print(dflist[0].head(20))
 
-    aggdf = result = pd.concat(dflist, axis=1).reindex(dflist[0].index)
+    dflist = np.array(dflist)
+    femaleidxs = [0,1,2,7,9,11,13,14,16,19]
+    maleidxs = [3,4,5,6,8,10,12,15,17,18,20]
 
-    print(aggdf)
+    femaledflist = dflist[femaleidxs]
+    maledflist = dflist[maleidxs]
+
+    maledf = pd.concat(maledflist,axis=1).reindex(maledflist[0].index)
+    maledf = maledf.fillna(0)
+    maledf = maledf.groupby(lambda x:x, axis=1).sum()
+   
+    femaledf = pd.concat(femaledflist,axis=1).reindex(femaledflist[0].index)
+    femaledf = femaledf.fillna(0)
+    femaledf = femaledf.groupby(lambda x:x, axis=1).sum()
+
+    aggdf = pd.concat([maledf,femaledf])
     aggdf.to_csv('aggdf.csv')
-    #df = pd.read_csv()
-    #with open('ChartingProjectSparsity.json', 'w') as outfile:
-    #     json.dump(result,outfile,indent=4)
 
 if __name__ == "__main__":
     main()
