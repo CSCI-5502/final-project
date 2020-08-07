@@ -11,10 +11,10 @@
 ## Questions sought
 The primary questions that were sought in the project were:
 
-- a
-- b
-- c
-- d 
+- Predict match outcomes
+- Analyze player styles
+- player rivalry analysis
+- 
 
 ## Applications
 
