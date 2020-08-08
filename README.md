@@ -29,3 +29,4 @@ The knowledge gained will be useful for:
 
 ## Links
 -  Demo link: https://drive.google.com/drive/folders/1qOpISrE57uxpJYebSYutm-B4Ls_MehG5?usp=sharing 
+-  Report link: https://github.com/CSCI-5502/final-project/blob/master/02_PatternsOfPlay_Part4.pdf
